@@ -1,6 +1,35 @@
 # pi-doorbell
 
-WIP :)
+Sends a notification to various targets when a doorbell switch is pressed.
+
+## Notifications
+Currently supported notification targets:
+ - Web - Shows a notification on the web ui using websockets
+ - Pushover (iOS, Android, Desktop)
+ - XBMC
+
+## TODO
+ - Remove piface and use standard GPIO pins
+ - Support multiple notification targets (XBMC, Pushover, etc)
+ - Support Raspberry Pi camera to take snapshots
+ - Support multiple doorbell switch inputs
+ - Record activity to database
+ - Improve web ui to display activity data
+
+## Planned Notification Targets
+ - Audio output (play mp3)
+ - GPIO output (control other devices)
+ - Plex
+ - Email
+ - Webhook
+ - Boxcar
+ - Libnotify
+ - Growl / GNTP
+ - Prowl
+ - Twitter
+ - Philips Hue
+ - [Ion](https://www.kickstarter.com/projects/lavallc/ion-a-music-detecting-mood-light-with-bluetooth-lo)
+
 
 ## License
 
