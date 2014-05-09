@@ -5,7 +5,7 @@ function $(selector) {
   return bonzo(qwery(selector));
 }
 
-var primus = new Primus('http://127.0.0.1:3000');
+var primus = new Primus();
 
 primus.on('connection', function(spark) {
   console.log('connected');
