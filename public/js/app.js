@@ -1,4 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var Primus = window.Primus;
 var qwery = require('qwery');
 var bonzo = require('bonzo');
 
@@ -6,27 +7,26 @@ function $(selector) {
   return bonzo(qwery(selector));
 }
 
-var primus = new Primus('http://127.0.0.1:3000');
+var primus = new Primus();
 
-primus.on('connection', function(spark) {
+primus.on('open', function(spark) {
   console.log('connected');
-
-  spark.on('data', function(data) {
-    if(data.doorbell) {
-      $('body').css('background', 'green');
-      $('.bell').show();
-
-      setTimeout(function() {
-        $('body').css('background', '#D6D6D6');
-        $('.bell').hide();
-      }, 2000);
-
-    }
-  });
 });
 
-primus.on('disconnection', function(spark) {
+primus.on('end', function(spark) {
   console.log('disconnected');
+});
+
+primus.on('data', function(data) {
+  if(data && data.doorbell) {
+    $('body').css('background', 'green');
+    $('.bell').show();
+
+    setTimeout(function() {
+      $('body').css('background', '#D6D6D6');
+      $('.bell').hide();
+    }, 2000);
+  }
 });
 
 },{"bonzo":2,"qwery":3}],2:[function(require,module,exports){

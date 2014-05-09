@@ -17,7 +17,12 @@ exports.register = function(plugin, options, next) {
 
   primus.on('connection', function (spark) {
     console.log('new connection');
+    setInterval(function() {
+      spark.write({
+        doorbell: true
+      });
+    }, 7000);
   });
-
+  
   next();
 };
