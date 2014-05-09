@@ -14,7 +14,9 @@ Currently supported notification targets:
  - Support Raspberry Pi camera to take snapshots
  - Support multiple doorbell switch inputs
  - Record activity to database
- - Improve web ui to display activity data
+ - Web UI: Activity browser
+ - Web UI: Notification config
+ - Quiet Hours - don't wake everyone up at 3am
 
 ## Planned Notification Targets
  - Audio output (play mp3)
