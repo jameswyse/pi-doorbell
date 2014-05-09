@@ -12,7 +12,7 @@ exports.register = function(plugin, options, next) {
       method: 'POST',
       url: url,
       json: true,
-      body: {
+      form: {
         token: app.config.get('/env/PUSHOVER_TOKEN'),
         user: app.config.get('/env/PUSHOVER_USER'),
         title: 'Doorbell - Side Gate',
