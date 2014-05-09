@@ -11,7 +11,7 @@ exports.register = function(plugin, options, next) {
     var connection = new xbmc.TCPConnection({
       host: '10.0.0.53',
       port: 9090,
-      verbose: true
+      verbose: false
     });
 
     var api = new xbmc.XbmcApi();
