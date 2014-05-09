@@ -13,7 +13,7 @@ exports.register = function(plugin, options, next) {
       url: url,
       json: true,
       body: {
-        token: app.config.get('/env/pushoverToken'),
+        token: app.config.get('/env/PUSHOVER_TOKEN'),
         user: 'Doorbell',
         title: 'Doorbell - Side Gate',
         message: 'Ring! Ring! Ring!',
