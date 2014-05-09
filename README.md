@@ -21,6 +21,7 @@ Currently supported notification targets:
  - GPIO output (control other devices)
  - Plex
  - Email
+ - SMS
  - Webhook
  - Boxcar
  - Libnotify
