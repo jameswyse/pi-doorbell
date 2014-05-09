@@ -35,9 +35,13 @@ exports.register = function(plugin, options, next) {
         console.log('= RING RING RING RING RING =');
         console.log('============================\n');
 
+        // Write to websocket
         app.ws.write({
           doorbell: true
         });
+
+        // Send notifications
+        app.task.now('Notify XBMC');
       }
 
       lastState = state;
