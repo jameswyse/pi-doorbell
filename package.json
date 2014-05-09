@@ -23,6 +23,24 @@
   },
   "homepage": "https://github.com/jameswyse/pi-doorbell",
   "dependencies": {
-    "piface-node": "^0.0.6"
+    "nails-framework": "2.0.x",
+    "nails-model": "~0.0.2",
+    "nails-task": "0.0.x",
+    "nails-swig": "https://npm.fury.io/UdTPwnvb8yAC3B8SJb3g/presco/nails-swig/-/0.0.2.tgz",
+    "modella-mongo": "0.2.x",
+    "gulp-concat": "^2.2.0",
+    "gulp-size": "^0.3.0",
+    "gulp-uglify": "^0.2.1",
+    "gulp-minify-css": "^0.3.4",
+    "gulp": "^3.6.2",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-imagemin": "^0.5.0",
+    "gulp-browserify": "^0.5.0",
+    "gulp-sass": "^0.7.1",
+    "ws": "^0.4.31",
+    "primus": "^2.2.1",
+    "piface-node": "^0.0.6",
+    "catbox": "^2.2.1",
+    "catbox-memory": "^1.0.1"
   }
 }

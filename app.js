@@ -1,35 +1,31 @@
-var pfio         = require('piface-node');
-var EventEmitter = require('events').EventEmitter;
+var nails = require('nails-framework');
 
-var emitter    = new EventEmitter();
-var prev_state = 0;
+var app = nails({
+  name:    'pi-doorbell',
+  desc:    'Raspberry Pi Doorbell',
+  version: '0.0.1',
 
-// Watch for Ctrl+C
-process.on('SIGINT', stopListening);
+  base:    __dirname,
+  require: require,
 
-startListening();
+  options: {
+    config: {
+      env:   true,
+      pkg:   true,
+      argv:  true,
+      files: 'app/config/**/*.{js,json}'
+    },
+    cache:   '/cache',
+    logs:    '/logger',
+    servers: '/servers',
+    plugins: '/plugins'
+  }
+});
 
-function startListening() {
-	pfio.init();
-	watchInputs();
-}
+app
+  .load('app/models/**/*.js')
+  .load('app/controllers/**/*.js')
+  .load('app/tasks/**/*.js');
 
-function stopListening() {
-	pfio.deinit();
-	process.exit(0);
-}
-
-// Watches for state changes
-function watchInputs() {
-	var state;
-	state = pfio.read_input();
-	if (state !== prev_state) {
-		emitter.emit('changed', state, prev_state);
-		prev_state = state;
-	}
-	setTimeout(watchInputs, 10);
-}
-
-emitter.on('changed', function(state, prevState) {
-  console.log('Input changed from ' + prevState + ' to ' + state);
+app.start(function() {
 });

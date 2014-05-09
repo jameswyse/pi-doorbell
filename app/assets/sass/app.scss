@@ -1,0 +1,111 @@
+@import 'terrain/terrain';
+@import 'terrain/terrain/color/palette';
+@import 'terrain/terrain/components/item_card';
+
+html, body {
+  background: #D6D6D6;
+}
+
+body {
+  padding: 20px 40px;
+}
+
+.grid-container {
+  box-sizing: border-box;
+}
+
+.grid-module {
+  width: 23%;
+  margin: 1%;
+  box-sizing: border-box;
+}
+
+.grid-module.grid-module-2x {
+  width: 48%;
+}
+
+.grid-module.grid-module-3x {
+  width: 73%;
+}
+
+.grid-module.grid-module-4x {
+  width: 98%;
+}
+
+.item-card {
+  margin: 0;
+}
+
+.item-card .item-identifier h3 {
+  text-transform: capitalize;
+}
+
+.item-card .item-identifier span {
+  margin: 0;
+}
+
+.item-card ul,
+.item-card ol {
+  margin-bottom: 0;
+}
+
+.gallery-container {
+  width: 100%;
+}
+
+.gallery-item {
+  height: 23%;
+  width: 23%;
+  min-height: 70px;
+  margin: 1%;
+  float: left;
+  background: #eee;
+  text-align: center;
+}
+
+.gallery-item-dribbble {
+  min-height: 65px;
+}
+.gallery-item img {
+  margin: auto;
+}
+
+.instagram-header {
+  background: #517FA4;
+  color: #fff;
+}
+
+.twitter-header {
+  background: #55ACEE;
+  color: #fff;
+}
+
+.reddit-header {
+  background: #cee3f8;
+  color: #000;
+}
+
+.guardian-header {
+  background: #064787;
+  color: #fff;
+}
+
+.digg-header {
+  background: #efefef;
+  color: #000;
+}
+
+.hn-header {
+  background: #F60;
+  color: #fff;
+}
+
+.google-header {
+  background: #0F9D58;
+  color: #fff;
+}
+
+.dribbble-header {
+  background: #ea4c89;
+  color: #fff;
+}
