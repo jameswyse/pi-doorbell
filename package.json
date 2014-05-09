@@ -1,0 +1,28 @@
+{
+  "name": "pi-doorbell",
+  "version": "0.0.1",
+  "description": "Raspberry Pi Doorbell",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jameswyse/pi-doorbell"
+  },
+  "keywords": [
+    "raspberry",
+    "pi",
+    "doorbell",
+    "piface"
+  ],
+  "author": "James Wyse <james@jameswyse.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jameswyse/pi-doorbell/issues"
+  },
+  "homepage": "https://github.com/jameswyse/pi-doorbell",
+  "dependencies": {
+    "piface-node": "^0.0.6"
+  }
+}
