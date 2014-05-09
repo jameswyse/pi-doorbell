@@ -17,7 +17,8 @@ exports.register = function(plugin, options, next) {
         user: app.config.get('/env/PUSHOVER_USER'),
         title: 'Doorbell - Side Gate',
         message: 'Ring! Ring! Ring!',
-        priority: 1
+        priority: 1,
+        sound: 'persistent'
       }
     };
 
