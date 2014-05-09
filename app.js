@@ -27,5 +27,12 @@ app
   .load('app/controllers/**/*.js')
   .load('app/tasks/**/*.js');
 
-app.start(function() {
-});
+app.start();
+
+function shutdown() {
+  app.stop(function() {
+    process.exit(0);
+  });
+}
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);

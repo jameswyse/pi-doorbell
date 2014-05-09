@@ -10,7 +10,6 @@ exports.register = function(plugin, options, next) {
 
   app.on('started', startListening);
   app.on('stop', stopListening);
-  process.on('SIGINT', stopListening);
 
   // Starts listening for button presses
   function startListening() {

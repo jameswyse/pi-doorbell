@@ -15,6 +15,10 @@ exports.register = function(plugin, options, next) {
     transformer: 'websockets'
   });
 
+  app.on('stop', function() {
+    primus.end();
+  });
+  
   primus.on('connection', function (spark) {
     console.log('new connection');
     app.ws = spark;
