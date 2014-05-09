@@ -1,11 +1,26 @@
-console.log('hello world');
+var qwery = require('qwery');
+var bonzo = require('bonzo');
+
+function $(selector) {
+  return bonzo(qwery(selector));
+}
+
 var primus = new Primus('http://127.0.0.1:3000');
 
 primus.on('connection', function(spark) {
   console.log('connected');
 
   spark.on('data', function(data) {
-    if(data.doorbell) window.alert('Ring ring ring!');
+    if(data.doorbell) {
+      $('body').css('background', 'green');
+      $('.bell').show();
+
+      setTimeout(function() {
+        $('body').css('background', '#D6D6D6');
+        $('.bell').hide();
+      }, 2000);
+
+    }
   });
 });
 

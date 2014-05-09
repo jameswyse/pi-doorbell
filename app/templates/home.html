@@ -1,26 +1,9 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-  <section class="grid-container gray-light-background">
-
-      {% for trend in trends %}
-        {% if trend.service === 'twitter' %}
-          {% include "partials/card-twitter.html" %}
-        {% elseif trend.service === 'instagram' %}
-          {% include "partials/card-instagram.html" %}
-        {% elseif trend.service === 'reddit' %}
-          {% include "partials/card-reddit.html" %}
-        {% elseif trend.service === 'guardian' %}
-          {% include "partials/card-guardian.html" %}
-        {% elseif trend.service === 'digg' %}
-          {% include "partials/card-digg.html" %}
-        {% elseif trend.service === 'HN' %}
-          {% include "partials/card-hackernews.html" %}
-        {% elseif trend.service === 'google' %}
-          {% include "partials/card-google.html" %}
-        {% elseif trend.service === 'dribbble' %}
-          {% include "partials/card-dribbble.html" %}
-        {% endif %}
-      {% endfor %}
+  <section class="">
+    <h1 style="color: #fff; text-align: center; margin: 40px 0;">
+      Ring Ring Ring!!
+    </h1>
   </section>
 {% endblock content %}
