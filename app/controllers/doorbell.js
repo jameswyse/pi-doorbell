@@ -1,10 +1,9 @@
-// var pfio         = require('piface-node');
+var pfio         = require('piface-node');
 
 exports.name     = 'controller.doorbell';
 exports.version  = '1.0.0';
 
 exports.register = function(plugin, options, next) {
-  return next();
   var app       = plugin.app;
   var lastState = 0;
   var timer;
