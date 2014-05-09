@@ -11,18 +11,14 @@ exports.register = function(plugin, options, next) {
   //
   // Create websocket server
   //
-  var primus = app.ws = new Primus(server, {
+  var primus = new Primus(server, {
     transformer: 'websockets'
   });
 
   primus.on('connection', function (spark) {
     console.log('new connection');
-    setInterval(function() {
-      spark.write({
-        doorbell: true
-      });
-    }, 7000);
+    app.ws = spark;
   });
-  
+
   next();
 };
