@@ -11,17 +11,16 @@ exports.register = function(plugin, options, next) {
   //
   // Create websocket server
   //
-  var primus = new Primus(server, {
+  var primus = app.ws = new Primus(server, {
     transformer: 'websockets'
   });
 
   app.on('stop', function() {
     primus.end();
   });
-  
+
   primus.on('connection', function (spark) {
     console.log('new connection');
-    app.ws = spark;
   });
 
   next();

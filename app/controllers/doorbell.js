@@ -35,9 +35,11 @@ exports.register = function(plugin, options, next) {
         console.log('============================\n');
 
         // Write to websocket
-        app.ws.write({
-          doorbell: true
-        });
+        if(app.ws) {
+          app.ws.write({
+            doorbell: true
+          });
+        }
 
         // Send notifications
         app.task.now('Notify XBMC');
