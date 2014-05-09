@@ -2,7 +2,7 @@ var nails = require('nails-framework');
 
 var app = nails({
   name:    'pi-doorbell',
-  desc:    'Raspberry Pi Doorbell',
+  desc:    'Raspberry Pi doorbell controller',
   version: '0.0.1',
 
   base:    __dirname,
@@ -34,5 +34,6 @@ function shutdown() {
     process.exit(0);
   });
 }
+
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);

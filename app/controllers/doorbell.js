@@ -8,6 +8,7 @@ exports.register = function(plugin, options, next) {
   var lastState = 0;
   var timer;
 
+  // Start/Stop when the app does
   app.on('started', startListening);
   app.on('stop', stopListening);
 
@@ -31,10 +32,10 @@ exports.register = function(plugin, options, next) {
     if(state !== lastState) {
       if(state === 128) {
         console.log('\n============================');
-        console.log('= RING RING RING RING RING =');
+        console.log('= DOORBELL - RING RING RING! =');
         console.log('============================\n');
 
-        // Write to websocket
+        // Broadcast to websocket clients
         if(app.ws) {
           app.ws.write({
             doorbell: true
