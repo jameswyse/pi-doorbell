@@ -44,6 +44,7 @@ exports.register = function(plugin, options, next) {
 
         // Send notifications
         // app.task.now('Notify XBMC');
+        app.task.now('Ring Chime');
         app.task.now('Notify Pushover');
       }
 
