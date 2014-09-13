@@ -38,5 +38,16 @@ exports.register = function(plugin, options, next) {
     }
   });
 
+  web.route({
+    method: 'get',
+    path: '/test-chime',
+    config: {
+      handler: function(request, reply) {
+        app.task.now('Ring Chime');
+        reply('DING DONG!');
+      }
+    }
+  });
+
   next();
 };
