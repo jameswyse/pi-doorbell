@@ -31,6 +31,8 @@ Currently supported notification targets:
  - Prowl
  - Twitter
  - Philips Hue
+ - [PushingBox](http://www.pushingbox.com/)
+ - [ITTT](https://ifttt.com/)
  - [Ion](https://www.kickstarter.com/projects/lavallc/ion-a-music-detecting-mood-light-with-bluetooth-lo)
 
 
