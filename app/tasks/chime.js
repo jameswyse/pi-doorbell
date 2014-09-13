@@ -10,7 +10,13 @@ exports.register = function(plugin, options, next) {
     pfio.digital_write(0,1);
     setTimeout(function() {
       pfio.digital_write(0,0);
-      return done();
+      setTimeout(function() {
+        pfio.digital_write(0,1);
+        setTimeout(function() {
+          pfio.digital_write(0,0);
+          return done();
+        }, 1000);
+      }, 1000);
     }, 1000);
   }
 
